@@ -25,52 +25,37 @@ public class SandwichShop {
 
         int userAge = myScanner.nextInt();
 
+        //Initializing a base price, realized my code was super redundant,
+        // so I wanted to reduce it with this if statement.
+        double basePrice = 0;
+        if (sandwichSize.equals("Large")) {
+            basePrice = largePrice;
+        }
+        else {
+            basePrice = regularPrice;
+        }
+
         //Initialize a variable for discount price used later
-        double discountPrice = 0;
+        double discountRate = 0;
 
         //If statement for 17 or under, discount of 10%
         if (userAge <= 17) {
             System.out.println("You get a 10% discount!");
-
-            // See if sandwich size is large or regular from user input
-            if (sandwichSize.equals("Large")) {
-                discountPrice = largePrice - (largePrice * 0.1);
-                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice) + ".");
-            } else {
-                discountPrice = regularPrice - (regularPrice * 0.1);
-                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice) + ".");
-            }
+            discountRate = 0.1;
         }
-
         //If your 65 or older, you get a 20% discount
         else if (userAge >= 65) {
             System.out.println("You get a 20% discount!");
-
-            // See if sandwich size is large or regular from user input
-            if (sandwichSize.equals("Large")) {
-                discountPrice = largePrice - (largePrice * 0.2);
-                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice) + ".");
-            } else {
-                discountPrice = regularPrice - (regularPrice * 0.2);
-                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice) + ".");
-                }
+            discountRate = 0.2;
         }
         //Statement for prices for people ages in between 17 and 65
         else {
             System.out.println("You pay normal prices.");
-
-            // See if sandwich size is large or regular from user input
-            if (sandwichSize.equals("Large")) {
-                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + largePrice + ".");
-            } else {
-                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + regularPrice + ".");
-            }
         }
+        //To reduce redundancy, moved print statement to the end as a final statement that prints
+        //for all conditionals
+        double finalPrice = basePrice - (basePrice * discountRate);
+        System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
+                + String.format("%.2f", finalPrice) + ".");
     }
 }
