@@ -59,6 +59,7 @@ public class SandwichShop {
                         + String.format("%.2f", discountPrice) + ".");
                 }
         }
+        //Statement for prices for people ages in between 17 and 65
         else {
             System.out.println("You pay normal prices.");
 
