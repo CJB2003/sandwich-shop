@@ -36,11 +36,11 @@ public class SandwichShop {
             if (sandwichSize.equals("Large")) {
                 discountPrice = largePrice - (largePrice * 0.1);
                 System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice));
+                        + String.format("%.2f", discountPrice) + ".");
             } else {
                 discountPrice = regularPrice - (regularPrice * 0.1);
                 System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice));
+                        + String.format("%.2f", discountPrice) + ".");
             }
         }
 
@@ -52,12 +52,24 @@ public class SandwichShop {
             if (sandwichSize.equals("Large")) {
                 discountPrice = largePrice - (largePrice * 0.2);
                 System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice));
+                        + String.format("%.2f", discountPrice) + ".");
             } else {
                 discountPrice = regularPrice - (regularPrice * 0.2);
                 System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
-                        + String.format("%.2f", discountPrice));
+                        + String.format("%.2f", discountPrice) + ".");
                 }
+        }
+        else {
+            System.out.println("You pay normal prices.");
+
+            // See if sandwich size is large or regular from user input
+            if (sandwichSize.equals("Large")) {
+                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
+                        + largePrice + ".");
+            } else {
+                System.out.println("You chose a " + sandwichSize + " sandwich. That'll be $"
+                        + regularPrice + ".");
+            }
         }
     }
 }
