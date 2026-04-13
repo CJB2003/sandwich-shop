@@ -29,10 +29,10 @@ public class SandwichShop {
         double basePrice = 0;
         if (yesOrNo.equals("Y")) {
             if (sandwichSize.equals("Large")) {
-                basePrice = largePrice + 1;
+                basePrice = largePrice + 1.75;
             }
             else {
-                basePrice = regularPrice + 1.75;
+                basePrice = regularPrice + 1;
             }
         }
         else {
